@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 3fd7d17e66895724585cdfae7369303c, type: 2}
 --- !u!1 &17856886
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-135572
+  m_Name: pb_Mesh71972
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -423,7 +423,7 @@ GameObject:
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &112986014
@@ -453,7 +453,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-147680
+  m_Name: pb_Mesh71918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -617,7 +617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-129962
+  m_Name: pb_Mesh71784
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -813,7 +813,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-161362
+  m_Name: pb_Mesh71948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -988,7 +988,7 @@ GameObject:
   m_Name: LeftWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &372174373
@@ -1297,7 +1297,7 @@ GameObject:
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &375822450
@@ -1461,8 +1461,8 @@ GameObject:
   m_Name: BackWallDoor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &500157523
 MeshCollider:
@@ -1869,7 +1869,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-165826
+  m_Name: pb_Mesh71810
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2044,8 +2044,8 @@ GameObject:
   m_Name: RightWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &639328310
 Transform:
@@ -2340,6 +2340,64 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1001 &655420016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4716478931674776764, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_Name
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5350166637740203526, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4174791803560039398, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 901c7beb134e8a1469f872037c9e4e3d, type: 3}
 --- !u!1 &689182150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,7 +2415,7 @@ GameObject:
   m_Name: FrontWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &689182151
@@ -2782,7 +2840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh45440
+  m_Name: pb_Mesh72004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2957,7 +3015,7 @@ GameObject:
   m_Name: FrontWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &747633275
@@ -3259,7 +3317,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-142376
+  m_Name: pb_Mesh71888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3423,7 +3481,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-109830
+  m_Name: pb_Mesh71840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3673,8 +3731,8 @@ GameObject:
   m_Name: BackWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &934307504
 MeshCollider:
@@ -4005,7 +4063,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-112414
+  m_Name: pb_Mesh71754
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4169,7 +4227,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-109834
+  m_Name: pb_Mesh72146
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4340,7 +4398,7 @@ GameObject:
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1067813906
@@ -4379,7 +4437,7 @@ GameObject:
   m_Name: FrontWall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1096277330
@@ -4853,7 +4911,7 @@ GameObject:
   m_Name: FrontWall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1267960823
@@ -5155,7 +5213,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-129566
+  m_Name: pb_Mesh72074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5319,7 +5377,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-119398
+  m_Name: pb_Mesh71992
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5483,7 +5541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-135070
+  m_Name: pb_Mesh71864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5658,8 +5716,8 @@ GameObject:
   m_Name: BackDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1336211457
 MeshCollider:
@@ -6196,8 +6254,8 @@ GameObject:
   m_Name: BackWall4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1345430389
 Transform:
@@ -6509,8 +6567,8 @@ GameObject:
   m_Name: GateR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1360725088
 Transform:
@@ -6822,8 +6880,8 @@ GameObject:
   m_Name: BackWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1410111781
 MeshCollider:
@@ -7201,7 +7259,7 @@ GameObject:
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1428272190
@@ -7237,8 +7295,8 @@ GameObject:
   m_Name: Stairs1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1436630205
 MeshCollider:
@@ -9436,7 +9494,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1452991759
 MeshCollider:
@@ -9792,8 +9850,8 @@ GameObject:
   m_Name: Stairs2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1505422934
 MeshCollider:
@@ -11990,8 +12048,8 @@ GameObject:
   m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1552688186
 Transform:
@@ -12292,7 +12350,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-170598
+  m_Name: pb_Mesh71960
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12456,7 +12514,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-120028
+  m_Name: pb_Mesh72022
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12631,8 +12689,8 @@ GameObject:
   m_Name: PassageWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1585630679
 MeshCollider:
@@ -12933,7 +12991,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-160800
+  m_Name: pb_Mesh72170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13381,7 +13439,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-167808
+  m_Name: pb_Mesh72034
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13556,8 +13614,8 @@ GameObject:
   m_Name: BackWallDoor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1683089118
 MeshCollider:
@@ -13865,7 +13923,7 @@ GameObject:
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1696645280
@@ -13982,7 +14040,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-133004
+  m_Name: pb_Mesh72158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14146,7 +14204,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-165828
+  m_Name: pb_Mesh72114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14310,7 +14368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-138284
+  m_Name: pb_Mesh72130
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14485,8 +14543,8 @@ GameObject:
   m_Name: GateL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1783036779
 Transform:
@@ -14798,8 +14856,8 @@ GameObject:
   m_Name: RightWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1850613165
 Transform:
@@ -15100,7 +15158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-132596
+  m_Name: pb_Mesh72050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15264,7 +15322,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-170882
+  m_Name: pb_Mesh72102
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15439,7 +15497,7 @@ GameObject:
   m_Name: LeftWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &1920799386
@@ -15741,7 +15799,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-109832
+  m_Name: pb_Mesh71822
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15905,7 +15963,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-100720
+  m_Name: pb_Mesh71936
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16080,7 +16138,7 @@ GameObject:
   m_Name: FrontDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!64 &2021005210
@@ -16616,8 +16674,8 @@ GameObject:
   m_Name: PassageWall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &2044728704
 MeshCollider:
@@ -16929,8 +16987,8 @@ GameObject:
   m_Name: BackWall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2131500994
 Transform:

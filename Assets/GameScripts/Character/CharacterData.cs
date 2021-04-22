@@ -12,6 +12,8 @@ public class CharacterData : MonoBehaviour
     public float maxCharge;
     public float charge;
 
+    public Team currentTeam;
+
     private void Awake()
     {
         charge = 500;

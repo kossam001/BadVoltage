@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int blueTeamSize;
     public int redTeamSize;
     public int greenTeamSize;
-    public TeamColour playerTeam;
+    public Team playerTeam;
 
     public bool win = false;
 
