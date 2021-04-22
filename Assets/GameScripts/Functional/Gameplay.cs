@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Team
-{
-    Friend,
-    Foe
-}
-
 public class Gameplay : MonoBehaviour
 {
     private static Gameplay instance;
