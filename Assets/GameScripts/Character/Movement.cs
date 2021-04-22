@@ -22,6 +22,13 @@ public class Movement : MonoBehaviour
     public float rotationSpeed;
     public bool isRunning;
 
+    // Jump
+    public bool canJump;
+    public float jumpForce;
+    public float maxJumpHeight;
+
+    private float jumpTime;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -68,5 +75,30 @@ public class Movement : MonoBehaviour
     public void SetIsRunning(bool on)
     {
         isRunning = on;
+    }
+
+    public void Jump()
+    {
+        if (canJump)
+        {
+            rigidbody.AddForce(new Vector3(0, jumpForce) * Time.deltaTime);
+            jumpTime += Time.deltaTime;
+        }
+
+        if (jumpTime * rigidbody.velocity.magnitude >= maxJumpHeight)
+        {
+            canJump = false;
+        }
+    }
+
+    public void StopJump()
+    {
+        canJump = false;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+            canJump = true;
     }
 }

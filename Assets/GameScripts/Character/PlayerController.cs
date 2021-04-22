@@ -26,6 +26,7 @@ public class PlayerController : Character
 
     public bool isPaused = false;
     public bool isShiftOn = false;
+    public bool isJumpPressed = false;
 
     private float shootCooldown = 0.0f;
 
@@ -45,6 +46,11 @@ public class PlayerController : Character
         if ((movementDirection.y != 0.0f || movementDirection.x != 0.0f))
         {
             Turn();
+        }
+
+        if (isJumpPressed)
+        {
+            movementComponent.Jump();
         }
 
         movementComponent.MovementCalculation(movementDirection);
@@ -75,9 +81,17 @@ public class PlayerController : Character
         Invoke(nameof(Shoot), 0.2f);
     }
 
-    private void Shoot()
+    public void OnJump(InputValue button)
     {
-        attackComponent.Shoot();
+        if (button.isPressed)
+        {
+            isJumpPressed = true;
+        }
+        else
+        {
+            isJumpPressed = false;
+            movementComponent.StopJump();
+        }
     }
 
     public void OnPause()
@@ -88,5 +102,10 @@ public class PlayerController : Character
     public void OnShift(InputValue button)
     {
         isShiftOn = button.isPressed;
+    }
+
+    private void Shoot()
+    {
+        attackComponent.Shoot();
     }
 }
