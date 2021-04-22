@@ -11,15 +11,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get { return instance; } }
 
     [Header("Main Level")]
-    public Image teamLabel;
     public GameObject pauseMenu;
     public PlayerController playerController;
-
-    [Header("Stage Select")]
-    public TMP_InputField redInput;
-    public TMP_InputField greenInput;
-    public TMP_InputField blueInput;
-    public TMP_Dropdown playerTeamInput;
 
     [Header("Game Over")]
     public Image background;
@@ -47,18 +40,8 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public void SetTeamColour(Color colour)
-    {
-        teamLabel.color = colour;
-    }
-
     public void StartGame(string name)
     {
-        GameManager.Instance.redTeamSize = int.Parse(redInput.text);
-        GameManager.Instance.greenTeamSize = int.Parse(greenInput.text);
-        GameManager.Instance.blueTeamSize = int.Parse(blueInput.text);
-        GameManager.Instance.playerTeam = (TeamColour)playerTeamInput.value;
-
         SceneManager.LoadScene(name);
     }
 
@@ -88,23 +71,6 @@ public class UIManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        Color backgroundColour;
-
-        switch (GameManager.Instance.playerTeam)
-        {
-            case TeamColour.RED:
-                backgroundColour = Color.red;
-                break;
-            case TeamColour.GREEN:
-                backgroundColour = Color.green;
-                break;
-            default:
-                backgroundColour = Color.blue;
-                break;
-        }
-
-        background.color = backgroundColour * new Vector4(1.0f, 1.0f, 1.0f, 0.5f);
 
         if (GameManager.Instance.win)
             result.text = "YOU WIN";
