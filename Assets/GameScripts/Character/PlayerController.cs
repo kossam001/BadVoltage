@@ -25,6 +25,8 @@ public class PlayerController : Character
     private Vector2 movementDirection;
 
     public bool isPaused = false;
+    public bool isShiftOn = false;
+
     private float shootCooldown = 0.0f;
 
     private void Awake()
@@ -45,9 +47,8 @@ public class PlayerController : Character
             Turn();
         }
 
-        Vector3 forwardForce = character.transform.forward * movementDirection.y;
-        Vector3 rightForce = character.transform.right * movementDirection.x;
-        movementComponent.Move(forwardForce + rightForce);
+        movementComponent.MovementCalculation(movementDirection);
+        movementComponent.SetIsRunning(isShiftOn);
 
         shootCooldown -= Time.deltaTime;
     }
@@ -82,5 +83,10 @@ public class PlayerController : Character
     public void OnPause()
     {
         UIManager.Instance.TogglePause();
+    }
+
+    public void OnShift(InputValue button)
+    {
+        isShiftOn = button.isPressed;
     }
 }

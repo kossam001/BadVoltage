@@ -5,10 +5,11 @@ using UnityEngine;
 public class CameraFollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform followTarget;
+    [SerializeField] private float speed;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = followTarget.position;
+        transform.position = Vector3.MoveTowards(transform.position, followTarget.position, speed * Time.deltaTime);
     }
 }
