@@ -25,6 +25,12 @@ public class Attack : MonoBehaviour
 
     private void Fire()
     {
+        GameObject bullet = BulletManager.Instance.GetBullet();
+        bullet.GetComponent<Rigidbody>().velocity = Vector3.zero; // Reusing ball reuses velocity, needs to be zeroed out
+        bullet.GetComponent<Bullet>().owner = gameObject;
+        bullet.SetActive(true);
 
+        bullet.transform.position = bulletSpawnPoint.position;
+        bullet.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }
