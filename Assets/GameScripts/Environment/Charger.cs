@@ -46,7 +46,7 @@ public class Charger : MonoBehaviour
         // Charging target
         if (isCharging && !isDown)
         {
-            target.charge += chargeStrength;
+            target.AddCharge(chargeStrength);
             currentCapacity -= chargeStrength;
 
             if (currentCapacity <= 0)

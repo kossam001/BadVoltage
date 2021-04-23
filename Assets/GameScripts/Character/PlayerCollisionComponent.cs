@@ -13,7 +13,7 @@ public class PlayerCollisionComponent : MonoBehaviour
 
             if (playerData.charge > 0)
             {
-                playerData.charge = Mathf.Max(playerData.charge - bullet.damage, 0);
+                playerData.AddCharge(-bullet.damage);
             }
             else
             {
