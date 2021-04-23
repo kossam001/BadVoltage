@@ -18,6 +18,7 @@ public class StageManager : MonoBehaviour
 
     public bool stageClear;
     public bool stageFail;
+
     public int enemyRemaining = 0;
 
     [SerializeField] private List<SpawnPoint> spawnPoints;
@@ -152,6 +153,11 @@ public class StageManager : MonoBehaviour
 
     private void Update()
     {
-        SpawnWave();
+        if (!stageClear && !stageFail)
+            SpawnWave();
+
+        // Failed due to too many enemies
+        if (enemyRemaining >= 30 && !stageClear)
+            stageFail = true;
     }
 }

@@ -26,6 +26,9 @@ public class DoorCharger : Charger
 
             if (currentCapacity >= maxChargeCapacity)
             {
+                if (!StageManager.Instance.stageFail)
+                    StageManager.Instance.stageClear = true;
+
                 doorAnimator.SetBool(IsAttackingHash, true);
             }
         }

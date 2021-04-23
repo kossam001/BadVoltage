@@ -37,7 +37,11 @@ public class CharacterData : MonoBehaviour
         if (health <= 0)
         {
             StageManager.Instance.RemoveFromTeam(this);
-            Destroy(gameObject);
+
+            if (tag == "Enemy")
+                Destroy(gameObject);
+            else if (tag == "Player" && !StageManager.Instance.stageClear)
+                StageManager.Instance.stageFail = true;
         }
     }
 

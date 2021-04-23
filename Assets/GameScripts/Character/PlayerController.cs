@@ -43,6 +43,8 @@ public class PlayerController : Character
     // Used to handle physics
     void FixedUpdate()
     {
+        if (isPaused) return;
+
         if ((movementDirection.y != 0.0f || movementDirection.x != 0.0f))
         {
             Turn();
@@ -68,6 +70,8 @@ public class PlayerController : Character
 
     public override void Turn()
     {
+        if (isPaused) return;
+
         movementComponent.Turn(cam.transform.rotation);
     }
 
@@ -83,6 +87,8 @@ public class PlayerController : Character
 
     public void OnJump(InputValue button)
     {
+        if (isPaused) return;
+
         if (button.isPressed)
         {
             isJumpPressed = true;
@@ -101,6 +107,8 @@ public class PlayerController : Character
 
     public void OnShift(InputValue button)
     {
+        if (isPaused) return;
+
         isShiftOn = button.isPressed;
     }
 
