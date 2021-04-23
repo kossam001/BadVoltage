@@ -17,6 +17,7 @@ public class DoorCharger : Charger
     protected override void Update()
     {
         if (StageManager.Instance.isPaused) return;
+        if (target && target.CompareTag("Enemy")) return;
 
         // Charging target
         if (isCharging && !isDown)

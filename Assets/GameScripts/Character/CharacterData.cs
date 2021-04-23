@@ -63,11 +63,13 @@ public class CharacterData : MonoBehaviour
         chargeEffect.SetActive(false);
     }
 
-    public void AddCharge(float value)
+    public void AddCharge(float value, bool activateEffect = true)
     {
         charge = Mathf.Clamp(charge + value, 0, maxCharge);
 
         chargeSlider.value = charge / maxCharge;
+
+        if (!activateEffect) return;
 
         if (!chargeEffect.activeInHierarchy)
             chargeEffect.SetActive(true);

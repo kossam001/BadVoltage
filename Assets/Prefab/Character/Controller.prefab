@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8903031343743361185}
   - component: {fileID: 8903031343743361190}
   - component: {fileID: 8903031343743361191}
-  - component: {fileID: 8903031343743361188}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -46,17 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152524545f305204abf684eaf3580fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillsList: []
-  currentlyActiveSkill: {fileID: 0}
   movementSpeed: 1000
   rotationSpeed: 1
   cam: {fileID: 0}
   character: {fileID: 0}
-  movementComponent: {fileID: 0}
   characterData: {fileID: 0}
-  skills: {fileID: 0}
-  animatorOverride: {fileID: 22100000, guid: 65a61ac0b0cab7047869f49a03be4c0d, type: 2}
   forwardMagnitude: 5
+  isShiftOn: 0
+  isJumpPressed: 0
 --- !u!114 &8903031343743361190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,17 +98,3 @@ MonoBehaviour:
   FollowTarget: {fileID: 0}
   RotationSpeed: 0.1
   HorizontalDamping: 1
---- !u!114 &8903031343743361188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8903031343743361187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98b74f93eb2546742a2047ed0b3cd2df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  isAttacking: 0

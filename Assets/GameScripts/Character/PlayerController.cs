@@ -34,6 +34,7 @@ public class PlayerController : Character
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        characterData = character.GetComponent<CharacterData>();
         characterAnimator = character.GetComponent<Animator>();
         movementComponent = character.GetComponent<Movement>();
         attackComponent = character.GetComponent<Attack>();
@@ -65,6 +66,8 @@ public class PlayerController : Character
         if (StageManager.Instance.isPaused) return;
 
         movementDirection = vector2.Get<Vector2>();
+
+        characterData.AddCharge(-0.1f, false);
     }
 
     public override void Turn()
@@ -72,21 +75,25 @@ public class PlayerController : Character
         if (StageManager.Instance.isPaused) return;
 
         movementComponent.Turn(cam.transform.rotation);
+
+        characterData.AddCharge(-0.1f, false);
     }
 
     public void OnAttack(InputValue button)
     {
         if (StageManager.Instance.isPaused) return;
         if (shootCooldown >= 0.0f) return;
+        if (characterData.charge <= 0.0f) return;
         
         shootCooldown = 0.5f;
 
-        Invoke(nameof(Shoot), 0.2f);
+        Invoke(nameof(Shoot), 0.5f);
     }
 
     public void OnJump(InputValue button)
     {
         if (StageManager.Instance.isPaused) return;
+        if (characterData.charge <= 0.0f) return;
 
         if (button.isPressed)
         {
@@ -106,6 +113,11 @@ public class PlayerController : Character
     public void OnShift(InputValue button)
     {
         if (StageManager.Instance.isPaused) return;
+        if (characterData.charge <= 0.0f)
+        {
+            isShiftOn = false;
+            return;
+        }
 
         isShiftOn = button.isPressed;
     }
@@ -113,5 +125,6 @@ public class PlayerController : Character
     private void Shoot()
     {
         attackComponent.Shoot();
+        characterData.AddCharge(-5);
     }
 }

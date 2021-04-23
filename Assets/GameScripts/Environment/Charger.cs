@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Charger : MonoBehaviour
 {
-    public GameObject particleEffect;
+    public GameObject chargeEffect;
     public Slider chargeCapacityDisplay;
     public CharacterData target;
 
@@ -26,7 +26,7 @@ public class Charger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             target = other.GetComponent<CharacterData>();
             isCharging = true;
@@ -35,7 +35,7 @@ public class Charger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
             target = null;
             isCharging = false;
@@ -49,8 +49,21 @@ public class Charger : MonoBehaviour
         // Charging target
         if (isCharging && !isDown)
         {
-            target.AddCharge(chargeStrength);
+            if (target == null)
+            {
+                isCharging = false;
+                return;
+            }
+
+            if (target.CompareTag("Player"))
+                target.AddCharge(chargeStrength);
+
+            else if (target.CompareTag("Enemy"))
+                target.AddHealth(-chargeStrength);
+
             currentCapacity -= chargeStrength;
+
+            chargeEffect.SetActive(true);
 
             if (currentCapacity <= 0)
             {
@@ -59,6 +72,11 @@ public class Charger : MonoBehaviour
                 isCharging = false;
                 target = null;
             }
+        }
+        else
+        {
+            if (chargeEffect.activeInHierarchy)
+                chargeEffect.SetActive(false);
         }
 
         // Refilling
