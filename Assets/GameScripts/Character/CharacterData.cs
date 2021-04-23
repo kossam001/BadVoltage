@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class CharacterData : MonoBehaviour
 {
+    public GameObject damageEffect;
+    public GameObject chargeEffect;
+
     public Slider healthSlider;
     public Slider chargeSlider;
 
@@ -22,10 +25,10 @@ public class CharacterData : MonoBehaviour
     private void Awake()
     {
         if (healthSlider)
-            AddHealth(0);
+            healthSlider.value = health / maxHealth;
 
         if (chargeSlider)
-            AddCharge(0);
+            chargeSlider.value = charge / maxCharge;
     }
 
     public void AddHealth(float value)
@@ -33,6 +36,12 @@ public class CharacterData : MonoBehaviour
         health = Mathf.Clamp(health + value, 0, maxHealth);
 
         healthSlider.value = health / maxHealth;
+
+        if (!damageEffect.activeInHierarchy)
+            damageEffect.SetActive(true);
+
+        if (!IsInvoking(nameof(TurnOffEffect)))
+            Invoke(nameof(TurnOffEffect), 1);
 
         if (health <= 0)
         {
@@ -48,10 +57,22 @@ public class CharacterData : MonoBehaviour
         }
     }
 
+    private void TurnOffEffect()
+    {
+        damageEffect.SetActive(false);
+        chargeEffect.SetActive(false);
+    }
+
     public void AddCharge(float value)
     {
         charge = Mathf.Clamp(charge + value, 0, maxCharge);
 
         chargeSlider.value = charge / maxCharge;
+
+        if (!chargeEffect.activeInHierarchy)
+            chargeEffect.SetActive(true);
+
+        if (!IsInvoking(nameof(TurnOffEffect)))
+            Invoke(nameof(TurnOffEffect), 0.5f);
     }
 }

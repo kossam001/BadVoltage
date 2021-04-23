@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Charger : MonoBehaviour
 {
+    public GameObject particleEffect;
     public Slider chargeCapacityDisplay;
     public CharacterData target;
 

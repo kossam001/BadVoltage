@@ -8,13 +8,13 @@ public class SFXController : MonoBehaviour
     public TrailRenderer trail;
     public ParticleSystemRenderer particles;
 
-    private void Update()
-    {
-        particles.material = mesh.material;
-        particles.trailMaterial = mesh.material;
+    //private void Update()
+    //{
+    //    particles.material = mesh.material;
+    //    particles.trailMaterial = mesh.material;
 
-        trail.material = mesh.material;
-        trail.startColor = mesh.material.color;
-        trail.endColor = mesh.material.color;
-    }
+    //    trail.material = mesh.material;
+    //    trail.startColor = mesh.material.color;
+    //    trail.endColor = mesh.material.color;
+    //}
 }
