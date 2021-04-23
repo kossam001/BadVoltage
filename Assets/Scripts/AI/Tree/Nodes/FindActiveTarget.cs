@@ -18,7 +18,7 @@ public class FindActiveTarget : TreeNode
 
         if (timer <= 0.0f)
         {
-            brain.enemyTargets = Gameplay.Instance.GetEnemies(brain.character.GetComponent<CharacterData>().currentTeam);
+            brain.enemyTargets = StageManager.Instance.GetEnemies(brain.character.GetComponent<CharacterData>().currentTeam);
 
             if (brain.enemyTargets.Count > 0)
             {

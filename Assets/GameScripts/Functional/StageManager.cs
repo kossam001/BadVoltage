@@ -20,12 +20,14 @@ public class StageManager : MonoBehaviour
     public bool stageFail;
 
     [SerializeField] private List<SpawnPoint> spawnPoints;
+    [SerializeField] private List<GameObject> enemyTemplates;
 
     private int characterCount = 0;
-    private int currentWave = 0;
+    [SerializeField] private int currentWave = 0;
+    [SerializeField] private int enemyInWave = 0;
 
     [SerializeField] private float goalWaveTimer;
-    private float currentWaveTimer;
+    [SerializeField] private float currentWaveTimer = 10;
 
     private void Awake()
     {
@@ -89,14 +91,44 @@ public class StageManager : MonoBehaviour
     }
 
     // Manage Waves
-    public void SpawnCharacters()
+    public void SpawnWave()
     {
-        SpawnCharacter();
+        if (enemyInWave <= 0 && currentWaveTimer <= 0)
+        {
+            currentWave++;
+            enemyInWave = currentWave * 2;
+            currentWaveTimer = goalWaveTimer;
+        }
+        else if (enemyInWave > 0)
+        {
+            SpawnCharacter();
+        }
+        else if (enemyInWave <= 0)
+        {
+            currentWaveTimer -= Time.deltaTime;
+        }
     }
 
     public void SpawnCharacter()
     {
+        GameObject spawnedEnemy = spawnPoints[Random.Range(0, spawnPoints.Count)].SpawnObject(enemyTemplates[Random.Range(0, enemyTemplates.Count)]);
 
+        if (spawnedEnemy != null)
+        {
+            CharacterData enemyData = spawnedEnemy.GetComponent<CharacterData>();
+
+            enemyData.id = characterCount++;
+            enemyData.currentTeam = Team.Enemy;
+
+            teamTable[Team.Enemy].Add(enemyData.id, spawnedEnemy);
+            enemyInWave--;
+        }
+        else
+        {
+            if (IsInvoking(nameof(SpawnCharacter))) return;
+
+            Invoke(nameof(SpawnCharacter), Random.Range(0.1f, 0.5f));
+        }
     }
 
     public void SetupCharacter(GameObject character, Team team)
@@ -112,5 +144,10 @@ public class StageManager : MonoBehaviour
         teamTable[team][characterData.id] = character;
 
         characterCount++;
+    }
+
+    private void Update()
+    {
+        SpawnWave();
     }
 }
