@@ -94,16 +94,18 @@ public class StageManager : MonoBehaviour
     // Manage Waves
     public void SpawnWave()
     {
-        if (enemyRemaining <= 0 && currentWaveTimer <= 0)
+        if (currentWaveTimer <= 0)
         {
             currentWave++;
-            enemyRemaining = currentWave * 2;
-            enemyToSpawn = enemyRemaining;
+            enemyRemaining += currentWave * 2;
+            enemyToSpawn = currentWave * 2;
             currentWaveTimer = goalWaveTimer;
         }
         else if (enemyToSpawn > 0)
         {
-            SpawnCharacter();
+            if (IsInvoking(nameof(SpawnCharacter))) return;
+
+            Invoke(nameof(SpawnCharacter), Random.Range(0.1f, 10.0f));
         }
         else if (enemyToSpawn <= 0)
         {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorCharger : Charger
 {
+    private readonly int IsAttackingHash = Animator.StringToHash("IsClosed");
+
     public Animator doorAnimator;
 
     protected override void Awake()
@@ -24,7 +26,7 @@ public class DoorCharger : Charger
 
             if (currentCapacity >= maxChargeCapacity)
             {
-                
+                doorAnimator.SetBool(IsAttackingHash, true);
             }
         }
     }
