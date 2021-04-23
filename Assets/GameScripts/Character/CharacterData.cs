@@ -6,7 +6,8 @@ using UnityEngine;
 public class CharacterData : MonoBehaviour
 {
     public int id;
-    public int health = 100;
+    public int maxHealth = 1000;
+    public int health = 500;
     public bool isAttacking = false;
 
     public float maxCharge;
@@ -14,8 +15,14 @@ public class CharacterData : MonoBehaviour
 
     public Team currentTeam;
 
-    private void Awake()
+    public void AddHealth(int value)
     {
-        charge = 500;
+        health = Mathf.Clamp(health + value, 0, maxHealth);
+
+        if (health <= 0)
+        {
+            StageManager.Instance.RemoveFromTeam(this);
+            Destroy(gameObject);
+        }
     }
 }

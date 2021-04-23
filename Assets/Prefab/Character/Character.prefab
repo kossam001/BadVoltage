@@ -678,8 +678,8 @@ GameObject:
   - component: {fileID: 6231985380443978367}
   - component: {fileID: 6920384946681066323}
   - component: {fileID: 6231985380443978369}
-  - component: {fileID: 4174791803560039398}
   - component: {fileID: 641205067}
+  - component: {fileID: 942910221629275379}
   m_Layer: 6
   m_Name: Character
   m_TagString: Character
@@ -767,9 +767,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0959ffd8cbd034eaf6e96e18ddcb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxWalkSpeed: 0
+  maxRunSpeed: 0
   movementSpeed: 5000
   rotationSpeed: 5
+  isRunning: 0
+  canJump: 0
+  jumpForce: 0
+  maxJumpHeight: 0
 --- !u!114 &6920384946681066323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,25 +802,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  maxHealth: 100
   health: 100
   isAttacking: 0
-  currentColour: {r: 0, g: 0, b: 0, a: 0}
+  maxCharge: 0
+  charge: 0
   currentTeam: 0
---- !u!114 &4174791803560039398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4716478931674776764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2d6bd8a4cbdb14c9a4d9656ec1f7ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshes:
-  - {fileID: 6563040069612807359}
-  - {fileID: 1103056943604760482}
 --- !u!195 &641205067
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -838,6 +830,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &942910221629275379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4716478931674776764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d595698bd8b63d144b7d93c160593310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4805382395630397415
 GameObject:
   m_ObjectHideFlags: 0
@@ -5827,8 +5831,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f804cc0751c84fa4fabfdefcfee8280c, type: 2}
-  - {fileID: 2100000, guid: f804cc0751c84fa4fabfdefcfee8280c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

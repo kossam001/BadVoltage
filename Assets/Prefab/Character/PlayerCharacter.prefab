@@ -4928,8 +4928,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f804cc0751c84fa4fabfdefcfee8280c, type: 2}
-  - {fileID: 2100000, guid: f804cc0751c84fa4fabfdefcfee8280c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5445,8 +5445,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3971098109032768829}
-  m_LocalRotation: {x: -0, y: 0.311505, z: -0, w: 0.95024455}
-  m_LocalPosition: {x: -6.0006504, y: -14.824302, z: -7.881958}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.789999, z: -7.0999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7650359794985642125}
@@ -5859,7 +5859,7 @@ GameObject:
   - component: {fileID: 8532175227380059380}
   - component: {fileID: 4620184108839503320}
   - component: {fileID: 8532175227380059146}
-  - component: {fileID: 1872303925479253357}
+  - component: {fileID: 2615642142875369463}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Character
@@ -5949,9 +5949,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0959ffd8cbd034eaf6e96e18ddcb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxWalkSpeed: 0
+  maxRunSpeed: 0
   movementSpeed: 5000
   rotationSpeed: 5
+  isRunning: 0
+  canJump: 0
+  jumpForce: 0
+  maxJumpHeight: 0
 --- !u!114 &4620184108839503320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5979,11 +5984,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  health: 100
+  maxHealth: 1000
+  health: 500
   isAttacking: 0
-  currentColour: {r: 0, g: 0, b: 0, a: 0}
+  maxCharge: 0
+  charge: 0
   currentTeam: 0
---- !u!114 &1872303925479253357
+--- !u!114 &2615642142875369463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5992,12 +5999,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7016706212791906871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2d6bd8a4cbdb14c9a4d9656ec1f7ac, type: 3}
+  m_Script: {fileID: 11500000, guid: d595698bd8b63d144b7d93c160593310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshes:
-  - {fileID: 8863242040130343476}
-  - {fileID: 3412266117710530857}
 --- !u!1 &7107859242905571692
 GameObject:
   m_ObjectHideFlags: 0

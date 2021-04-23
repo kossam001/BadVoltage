@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float duration;
     public GameObject owner;
+    public int damage;
 
     private void OnEnable()
     {
