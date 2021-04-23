@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorCharger : Charger
 {
+    public Animator doorAnimator;
+
     protected override void Awake()
     {
         currentCapacity = 0;
@@ -22,7 +24,7 @@ public class DoorCharger : Charger
 
             if (currentCapacity >= maxChargeCapacity)
             {
-                Debug.Log("Door Charged");
+                
             }
         }
     }
