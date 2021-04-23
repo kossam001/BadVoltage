@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
     public float maxJumpHeight;
 
     private float jumpTime;
+    private Vector3 groundHeight;
 
     private void Awake()
     {
@@ -39,14 +40,16 @@ public class Movement : MonoBehaviour
     {
         if (Vector3.Distance(movementForce, Vector3.zero) <= 0.01f)
         {
-            rigidbody.velocity = Vector3.zero;
+            rigidbody.velocity = Vector3.Scale(new Vector3(0,1,0), rigidbody.velocity);
         }
         else
         {
             maxSpeed = isRunning ? maxRunSpeed : maxWalkSpeed;
             animator.SetBool(IsRunningHash, isRunning);
 
-            rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, maxSpeed);
+            Vector3 clampedMoveVector = Vector3.ClampMagnitude(Vector3.Scale(new Vector3(1, 0, 1), rigidbody.velocity), maxSpeed);
+
+            rigidbody.velocity = new Vector3(clampedMoveVector.x, rigidbody.velocity.y, clampedMoveVector.z);
 
             // Sum forward and side force
             rigidbody.AddForce(movementForce * movementSpeed);
@@ -85,7 +88,7 @@ public class Movement : MonoBehaviour
             jumpTime += Time.deltaTime;
         }
 
-        if (jumpTime * rigidbody.velocity.magnitude >= maxJumpHeight)
+        if (transform.position.y - groundHeight.y >= maxJumpHeight)
         {
             canJump = false;
         }
@@ -99,6 +102,9 @@ public class Movement : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
+        {
+            groundHeight = transform.position;
             canJump = true;
+        }
     }
 }
