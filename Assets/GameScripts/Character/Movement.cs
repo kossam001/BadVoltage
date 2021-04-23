@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 {
     // Animator hashes
     private readonly int IsRunningHash = Animator.StringToHash("IsRunning");
+    private readonly int IsInAir = Animator.StringToHash("IsInAir");
     private readonly int MoveXHash = Animator.StringToHash("MoveX");
     private readonly int MoveZHash = Animator.StringToHash("MoveZ");
 
@@ -103,8 +104,18 @@ public class Movement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
+            animator.SetBool(IsInAir, false);
             groundHeight = transform.position;
             canJump = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            canJump = true;
+            animator.SetBool(IsInAir, true);
         }
     }
 }
