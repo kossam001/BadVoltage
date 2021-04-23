@@ -18,13 +18,14 @@ public class StageManager : MonoBehaviour
 
     public bool stageClear;
     public bool stageFail;
+    public int enemyRemaining = 0;
 
     [SerializeField] private List<SpawnPoint> spawnPoints;
     [SerializeField] private List<GameObject> enemyTemplates;
 
     private int characterCount = 0;
     [SerializeField] private int currentWave = 0;
-    [SerializeField] private int enemyInWave = 0;
+    [SerializeField] private int enemyToSpawn = 0;
 
     [SerializeField] private float goalWaveTimer;
     [SerializeField] private float currentWaveTimer = 10;
@@ -93,17 +94,18 @@ public class StageManager : MonoBehaviour
     // Manage Waves
     public void SpawnWave()
     {
-        if (enemyInWave <= 0 && currentWaveTimer <= 0)
+        if (enemyRemaining <= 0 && currentWaveTimer <= 0)
         {
             currentWave++;
-            enemyInWave = currentWave * 2;
+            enemyRemaining = currentWave * 2;
+            enemyToSpawn = enemyRemaining;
             currentWaveTimer = goalWaveTimer;
         }
-        else if (enemyInWave > 0)
+        else if (enemyToSpawn > 0)
         {
             SpawnCharacter();
         }
-        else if (enemyInWave <= 0)
+        else if (enemyToSpawn <= 0)
         {
             currentWaveTimer -= Time.deltaTime;
         }
@@ -121,13 +123,13 @@ public class StageManager : MonoBehaviour
             enemyData.currentTeam = Team.Enemy;
 
             teamTable[Team.Enemy].Add(enemyData.id, spawnedEnemy);
-            enemyInWave--;
+            enemyToSpawn--;
         }
         else
         {
             if (IsInvoking(nameof(SpawnCharacter))) return;
 
-            Invoke(nameof(SpawnCharacter), Random.Range(0.1f, 0.5f));
+            Invoke(nameof(SpawnCharacter), Random.Range(0.1f, 10.0f));
         }
     }
 

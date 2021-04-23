@@ -5859,10 +5859,10 @@ GameObject:
   - component: {fileID: 8532175227380059380}
   - component: {fileID: 4620184108839503320}
   - component: {fileID: 8532175227380059146}
-  - component: {fileID: 2615642142875369463}
+  - component: {fileID: 3777606660048441990}
   m_Layer: 6
   m_Name: PlayerCharacter
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5990,7 +5990,7 @@ MonoBehaviour:
   maxCharge: 0
   charge: 0
   currentTeam: 0
---- !u!114 &2615642142875369463
+--- !u!114 &3777606660048441990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5999,7 +5999,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7016706212791906871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d595698bd8b63d144b7d93c160593310, type: 3}
+  m_Script: {fileID: 11500000, guid: 5510b6aaf6ea62d42ab73def9d5ff15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7107859242905571692
