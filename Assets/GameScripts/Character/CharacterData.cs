@@ -41,7 +41,10 @@ public class CharacterData : MonoBehaviour
             if (tag == "Enemy")
                 Destroy(gameObject);
             else if (tag == "Player" && !StageManager.Instance.stageClear)
-                StageManager.Instance.stageFail = true;
+            {
+                StageManager.Instance.stageClear = true;
+                StartCoroutine(StageManager.Instance.GameOver(false));
+            }
         }
     }
 

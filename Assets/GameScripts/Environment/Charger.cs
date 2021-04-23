@@ -43,6 +43,8 @@ public class Charger : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (StageManager.Instance.isPaused) return;
+
         // Charging target
         if (isCharging && !isDown)
         {

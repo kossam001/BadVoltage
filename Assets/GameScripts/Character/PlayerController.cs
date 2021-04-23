@@ -24,7 +24,6 @@ public class PlayerController : Character
 
     private Vector2 movementDirection;
 
-    public bool isPaused = false;
     public bool isShiftOn = false;
     public bool isJumpPressed = false;
 
@@ -43,7 +42,7 @@ public class PlayerController : Character
     // Used to handle physics
     void FixedUpdate()
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
 
         if ((movementDirection.y != 0.0f || movementDirection.x != 0.0f))
         {
@@ -63,21 +62,21 @@ public class PlayerController : Character
 
     public void OnMovement(InputValue vector2)
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
 
         movementDirection = vector2.Get<Vector2>();
     }
 
     public override void Turn()
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
 
         movementComponent.Turn(cam.transform.rotation);
     }
 
     public void OnAttack(InputValue button)
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
         if (shootCooldown >= 0.0f) return;
         
         shootCooldown = 0.5f;
@@ -87,7 +86,7 @@ public class PlayerController : Character
 
     public void OnJump(InputValue button)
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
 
         if (button.isPressed)
         {
@@ -107,7 +106,7 @@ public class PlayerController : Character
 
     public void OnShift(InputValue button)
     {
-        if (isPaused) return;
+        if (StageManager.Instance.isPaused) return;
 
         isShiftOn = button.isPressed;
     }

@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
 
-        if (SceneManager.GetActiveScene().name == "GameOver")
+        if (SceneManager.GetActiveScene().name == "GameOverScene")
         {
             SetGameOver();
         }
@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
     {
         if (Time.timeScale == 1.0f)
         {
-            playerController.isPaused = true;
+            StageManager.Instance.isPaused = true;
 
             ToggleCursor();
 
@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            playerController.isPaused = false;
+            StageManager.Instance.isPaused = false;
 
             ToggleCursor();
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum Team
 {
@@ -17,9 +18,10 @@ public class StageManager : MonoBehaviour
     public Dictionary<Team, Dictionary<int, GameObject>> teamTable;
 
     public bool stageClear;
-    public bool stageFail;
+    public bool isPaused = false;
 
     public int enemyRemaining = 0;
+    public int maxEnemyCount = 30;
 
     [SerializeField] private List<SpawnPoint> spawnPoints;
     [SerializeField] private List<GameObject> enemyTemplates;
@@ -151,13 +153,28 @@ public class StageManager : MonoBehaviour
         characterCount++;
     }
 
+    public IEnumerator GameOver(bool win)
+    {
+        yield return new WaitForSeconds(5);
+
+        GameManager.Instance.win = win;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("GameOverScene");
+    }
+
     private void Update()
     {
-        if (!stageClear && !stageFail)
+        if (!stageClear)
             SpawnWave();
 
         // Failed due to too many enemies
-        if (enemyRemaining >= 30 && !stageClear)
-            stageFail = true;
+        if (enemyRemaining >= maxEnemyCount && !stageClear)
+        {
+            stageClear = true;
+            StartCoroutine(GameOver(false));
+        }
     }
 }

@@ -16,18 +16,24 @@ public class DoorCharger : Charger
 
     protected override void Update()
     {
+        if (StageManager.Instance.isPaused) return;
+
         // Charging target
         if (isCharging && !isDown)
         {
-            target.charge += chargeStrength;
+            target.AddCharge(chargeStrength);
             currentCapacity -= chargeStrength;
 
             chargeCapacityDisplay.value = currentCapacity / maxChargeCapacity;
 
             if (currentCapacity >= maxChargeCapacity)
             {
-                if (!StageManager.Instance.stageFail)
+                if (!StageManager.Instance.stageClear)
+                {
                     StageManager.Instance.stageClear = true;
+
+                    StartCoroutine(StageManager.Instance.GameOver(true));
+                }
 
                 doorAnimator.SetBool(IsAttackingHash, true);
             }
