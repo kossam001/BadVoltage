@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour
     public bool isRunning;
 
     // Jump
-    public bool canJump;
     public float jumpForce;
     public float maxJumpHeight;
 
@@ -83,21 +82,10 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
-        if (canJump)
-        {
-            rigidbody.AddForce(new Vector3(0, jumpForce) * Time.deltaTime);
-            jumpTime += Time.deltaTime;
-        }
+        rigidbody.AddForce(new Vector3(0, jumpForce) * Time.deltaTime);
+        jumpTime += Time.deltaTime;
 
-        if (transform.position.y - groundHeight.y >= maxJumpHeight)
-        {
-            canJump = false;
-        }
-    }
-
-    public void StopJump()
-    {
-        canJump = false;
+        GetComponent<CharacterData>().AddCharge(-0.2f);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -105,8 +93,6 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             animator.SetBool(IsInAir, false);
-            groundHeight = transform.position;
-            canJump = true;
         }
     }
 
@@ -114,7 +100,6 @@ public class Movement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            canJump = true;
             animator.SetBool(IsInAir, true);
         }
     }

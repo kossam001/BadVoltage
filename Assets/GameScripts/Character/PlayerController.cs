@@ -95,7 +95,6 @@ public class PlayerController : Character
         else
         {
             isJumpPressed = false;
-            movementComponent.StopJump();
         }
     }
 
