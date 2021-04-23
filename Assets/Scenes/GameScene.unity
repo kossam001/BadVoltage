@@ -13688,50 +13688,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 319410686}
     m_Modifications:
-    - target: {fileID: 3971098109032768824, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768824, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768824, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.099947
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768824, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768824, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768831, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768831, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768831, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3971098109032768831, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5243751939054311322, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 5243751939054311322, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.099947
-      objectReference: {fileID: 0}
     - target: {fileID: 5243751939054311323, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
       propertyPath: m_Follow
       value: 
@@ -13751,10 +13707,6 @@ PrefabInstance:
     - target: {fileID: 7016706212791906871, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7016706212791906871, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7650359794985642125, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
       propertyPath: m_RootOrder
@@ -13801,22 +13753,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8532175227380059146, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: charge
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059146, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059146, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: maxCharge
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059146, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059146, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
       propertyPath: chargeSlider
       value: 
       objectReference: {fileID: 25009147}
@@ -13824,48 +13760,7 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 2829201181606133180}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: canJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: jumpForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: maxRunSpeed
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: maxWalkSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: maxJumpHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059380, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: movementSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059381, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059381, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059381, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8532175227380059383, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8bdd25257f7646d47825c3176a3876c8, type: 2}
-    m_RemovedComponents:
-    - {fileID: 1872303925479253357, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c66377087f367eb4f97b46a9dd5e5034, type: 3}
 --- !u!1001 &1658964896
 PrefabInstance:
