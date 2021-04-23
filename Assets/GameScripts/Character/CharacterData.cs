@@ -6,12 +6,12 @@ using UnityEngine;
 public class CharacterData : MonoBehaviour
 {
     public int id;
-    public int maxHealth = 1000;
-    public int health = 500;
+    public int maxHealth = 100;
+    public int health = 100;
     public bool isAttacking = false;
 
-    public float maxCharge;
-    public float charge;
+    public float maxCharge = 1000;
+    public float charge = 500;
 
     public Team currentTeam;
 
