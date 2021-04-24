@@ -720,7 +720,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -774,7 +774,6 @@ MonoBehaviour:
   movementSpeed: 5000
   rotationSpeed: 5
   isRunning: 0
-  canJump: 0
   jumpForce: 0
   maxJumpHeight: 0
 --- !u!114 &6920384946681066323
@@ -803,6 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b74f93eb2546742a2047ed0b3cd2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 0}
   damageEffect: {fileID: 4379402663236473006}
   chargeEffect: {fileID: 4379402663236473006}
   healthSlider: {fileID: 7497614731962396254}
