@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CharacterData : MonoBehaviour
 {
+    public AudioSource soundEffect;
+
     public GameObject damageEffect;
     public GameObject chargeEffect;
 
@@ -29,6 +31,8 @@ public class CharacterData : MonoBehaviour
 
         if (chargeSlider)
             chargeSlider.value = charge / maxCharge;
+
+        soundEffect = GetComponent<AudioSource>();
     }
 
     public void AddHealth(float value)
@@ -70,6 +74,9 @@ public class CharacterData : MonoBehaviour
         chargeSlider.value = charge / maxCharge;
 
         if (!activateEffect) return;
+
+        if (soundEffect != null && !soundEffect.isPlaying)
+            soundEffect.Play();
 
         if (!chargeEffect.activeInHierarchy)
             chargeEffect.SetActive(true);
