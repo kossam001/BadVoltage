@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class Charger : MonoBehaviour
 {
+    // Animator hashes
+    private readonly int IsChargerDownHash = Animator.StringToHash("IsChargerDown");
+
     public GameObject chargeEffect;
     public Slider chargeCapacityDisplay;
     public CharacterData target;
+    public Animator chargerDownAnimator;
 
     [SerializeField] protected bool isCharging;
     [SerializeField] protected bool isDown;
@@ -89,11 +93,13 @@ public class Charger : MonoBehaviour
         if (isDown)
         {
             currentDownTime += Time.deltaTime;
+            chargerDownAnimator.SetBool(IsChargerDownHash, true);
 
             if (currentDownTime >= maxDownTime)
             {
                 isDown = false;
                 currentDownTime = 0;
+                chargerDownAnimator.SetBool(IsChargerDownHash, false);
             }
         }
 

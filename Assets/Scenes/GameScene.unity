@@ -2105,7 +2105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 253868696}
   playerController: {fileID: 1112963727}
-  background: {fileID: 0}
+  winBackground: {fileID: 0}
+  loseBackground: {fileID: 0}
   result: {fileID: 0}
 --- !u!114 &497110675 stripped
 MonoBehaviour:
@@ -5875,6 +5876,7 @@ MonoBehaviour:
   chargeEffect: {fileID: 0}
   chargeCapacityDisplay: {fileID: 497110675}
   target: {fileID: 0}
+  chargerDownAnimator: {fileID: 0}
   isCharging: 0
   isDown: 0
   chargeStrength: -0.1
