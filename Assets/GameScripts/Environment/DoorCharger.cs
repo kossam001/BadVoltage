@@ -17,12 +17,22 @@ public class DoorCharger : Charger
     protected override void Update()
     {
         if (StageManager.Instance.isPaused) return;
-        if (target && target.CompareTag("Enemy")) return;
 
         // Charging target
         if (isCharging && !isDown)
         {
-            target.AddCharge(chargeStrength);
+            if (target == null)
+            {
+                isCharging = false;
+                return;
+            }
+
+            if (target.CompareTag("Player"))
+                target.AddCharge(chargeStrength);
+
+            else if (target.CompareTag("Enemy"))
+                target.AddHealth(chargeStrength);
+
             currentCapacity -= chargeStrength;
 
             chargeCapacityDisplay.value = currentCapacity / maxChargeCapacity;
