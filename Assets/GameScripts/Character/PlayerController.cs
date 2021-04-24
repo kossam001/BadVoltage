@@ -44,6 +44,7 @@ public class PlayerController : Character
     void FixedUpdate()
     {
         if (StageManager.Instance.isPaused) return;
+        if (characterData.health <= 0) return;
 
         if ((movementDirection.y != 0.0f || movementDirection.x != 0.0f))
         {

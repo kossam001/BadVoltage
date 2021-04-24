@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour
     public PlayerController playerController;
 
     [Header("Game Over")]
-    public Image background;
+    public GameObject winBackground;
+    public GameObject loseBackground;
     public TMP_Text result;
 
     private void Awake()
@@ -73,10 +74,16 @@ public class UIManager : MonoBehaviour
         Cursor.visible = true;
 
         if (GameManager.Instance.win)
+        {
+            winBackground.SetActive(true);
             result.text = "YOU WIN";
+        }
 
         else
+        {
+            loseBackground.SetActive(true);
             result.text = "YOU LOSE";
+        }
 
         GameManager.Instance.win = false;
     }
